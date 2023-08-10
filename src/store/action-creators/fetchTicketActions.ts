@@ -9,7 +9,7 @@ const fetchTickets = async (id: number) => {
 
   try {
     const ticketRes = await fetch(
-      `https://aviasales-test-api.kata.academy/tickets?searchId=${id}`
+      `https://aviasales-test-api/tickets?searchId=${id}`
     );
     tickets = await ticketRes.json();
     return tickets;
@@ -24,7 +24,7 @@ export const initialTickets = () => {
     dispatch({ type: ticketActionTypes.LOAD });
 
     const response = await fetch(
-      "https://aviasales-test-api.kata.academy/search"
+      "https://aviasales-test-api/search"
     );
     const { searchId } = await response.json();
     let loading = true;
